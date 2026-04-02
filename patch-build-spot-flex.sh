@@ -314,12 +314,12 @@ fi
 VERSION_NO_V="${TAG#v}"
 LDFLAGS="-X=sigs.k8s.io/karpenter/pkg/operator.Version=${VERSION_NO_V}"
 
-log "Building docker image ${IMAGE}"
-docker build \
-  -f ../karpenter-patching/Dockerfile.patched-controller \
-  --build-arg GO_VERSION="${GO_MAJOR_MINOR}" \
-  --build-arg LDFLAGS="${LDFLAGS}" \
-  -t "${IMAGE}" \
-  .
-
-log "Done. Built image ${IMAGE}"
+#log "Building docker image ${IMAGE}"
+#docker build \
+#  -f ../karpenter-patching/Dockerfile.patched-controller \
+#  --build-arg GO_VERSION="${GO_MAJOR_MINOR}" \
+#  --build-arg LDFLAGS="${LDFLAGS}" \
+#  -t "${IMAGE}" \
+#  .
+#
+#log "Done. Built image ${IMAGE}"

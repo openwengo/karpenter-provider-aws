@@ -190,6 +190,8 @@ settings:
   preferencePolicy: Respect
   # -- How the Karpenter scheduler treats min values. Options include 'Strict' (fails scheduling when min values can't be met) and 'BestEffort' (relaxes min values when they can't be met).
   minValuesPolicy: Strict
+  # -- Minimum number of cheaper spot instance type options required to perform single-node spot-to-spot consolidation.
+  minSpotToSpotConsolidationInstanceTypeFlexibility: 15
   # -- Cluster CA bundle for TLS configuration of provisioned nodes. If not set, this is taken from the controller's TLS configuration for the API server.
   clusterCABundle: ""
   # -- Cluster name.

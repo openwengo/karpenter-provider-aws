@@ -32,7 +32,7 @@ What it does:
   1) Checks out the provider tag.
   2) Checks out matching upstream core based on go.mod (tag or pseudo-version commit).
   3) Applies core + provider patches for configurable spot-to-spot flexibility.
-  4) Builds image with hack/docker/Dockerfile.patched-controller (unless --skip-build).
+  4) Builds image with patching/Dockerfile.patched-controller (unless --skip-build).
 EOF
 }
 
@@ -314,12 +314,12 @@ fi
 VERSION_NO_V="${TAG#v}"
 LDFLAGS="-X=sigs.k8s.io/karpenter/pkg/operator.Version=${VERSION_NO_V}"
 
-log "Building docker image ${IMAGE}"
-docker build \
-  -f hack/docker/Dockerfile.patched-controller \
-  --build-arg GO_VERSION="${GO_MAJOR_MINOR}" \
-  --build-arg LDFLAGS="${LDFLAGS}" \
-  -t "${IMAGE}" \
-  .
-
-log "Done. Built image ${IMAGE}"
+#log "Building docker image ${IMAGE}"
+#docker build \
+#  -f ../karpenter-patching/Dockerfile.patched-controller \
+#  --build-arg GO_VERSION="${GO_MAJOR_MINOR}" \
+#  --build-arg LDFLAGS="${LDFLAGS}" \
+#  -t "${IMAGE}" \
+#  .
+#
+#log "Done. Built image ${IMAGE}"

@@ -127,7 +127,7 @@ We refer to the number of instances that Karpenter has within its launch decisio
 1) We shouldn't continually consolidate down to the lowest priced spot instance which might have very high rates of interruption.
 2) We launch with enough instance types that there’s high likelihood that our replacement instance has comparable availability to our current one.
 
-Karpenter requires a minimum instance type flexibility of 15 instance types when performing single node spot-to-spot consolidations (1 node to 1 node). It does not have the same instance type flexibility requirement for multi-node spot-to-spot consolidations (many nodes to 1 node) since doing so without requiring flexibility won't lead to "race to the bottom" scenarios.
+Karpenter requires a minimum instance type flexibility when performing single node spot-to-spot consolidations (1 node to 1 node). This value defaults to `15` and can be configured with `MIN_SPOT_TO_SPOT_CONSOLIDATION_INSTANCE_TYPE_FLEXIBILITY`. It does not have the same instance type flexibility requirement for multi-node spot-to-spot consolidations (many nodes to 1 node) since doing so without requiring flexibility won't lead to "race to the bottom" scenarios.
 
 
 ### Drift

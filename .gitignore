@@ -17,3 +17,6 @@ go.work.sum
 
 # Binary output
 karpenter-provider-aws-*
+
+# Local upstream checkouts used by patch/build tooling
+upstream/

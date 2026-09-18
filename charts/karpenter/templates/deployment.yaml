@@ -143,6 +143,10 @@ spec:
             - name: MIN_VALUES_POLICY
               value: "{{ . }}"
           {{- end }}
+          {{- with .Values.settings.minSpotToSpotConsolidationInstanceTypeFlexibility }}
+            - name: MIN_SPOT_TO_SPOT_CONSOLIDATION_INSTANCE_TYPE_FLEXIBILITY
+              value: "{{ tpl (toString .) $ }}"
+          {{- end }}
           {{- with .Values.settings.clusterCABundle }}
             - name: CLUSTER_CA_BUNDLE
               value: "{{ tpl (toString .) $ }}"
